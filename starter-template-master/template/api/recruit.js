@@ -15,33 +15,22 @@ export default {
       data: searchMap
     })
   },
-  save(pojo) {
-    return request({
-      url: `/${group_name}/${api_name}`,
-      method: 'post',
-      data: pojo
-    })
-  },
   findById(id) {
     return request({
       url: `/${group_name}/${api_name}/${id}`,
       method: 'get'
     })
   },
-  update(id, pojo) {
-    if (id === null || id === '') {
-      return this.save(pojo)
-    }
-    return request({
-      url: `/${group_name}/${api_name}/${id}`,
-      method: 'put',
-      data: pojo
-    })
+  recommend() { 
+    return request({ 
+      url: `${group_name}/${api_name}/search/recommend`, 
+      method: 'get' 
+    }) 
   },
-  deleteById(id) {
-    return request({
-      url: `/${group_name}/${api_name}/${id}`,
-      method: 'delete'
-    })
+  newlist() { 
+    return request({ 
+      url: `/${group_name}/${api_name}/search/newlist`, 
+      method: 'get' 
+    }) 
   }
 }
