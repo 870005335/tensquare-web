@@ -18,7 +18,12 @@ module.exports = {
   */
   loading: { color: '#3B8070' },
   plugins: [
-    { src: '~plugins/vue-infinite-scroll', ssr: false }
+    { src: '~plugins/element-ui.js', ssr: true },
+    { src: '~plugins/vue-infinite-scroll.js', ssr: false }
+  ],
+  // some nuxt config...
+  css: [
+    'element-ui/lib/theme-chalk/index.css'
   ],
   /*
   ** Build configuration
